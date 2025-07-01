@@ -1,0 +1,14 @@
+version: "3.9"
+
+services:
+  real-investor-web:
+    image: real-investor-web
+    environment:
+      - NODE_ENV=sit
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        appenv: sit
+    ports:
+      - 80:3000
