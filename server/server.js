@@ -9,18 +9,19 @@ const executionPath = dirname(fileURLToPath(import.meta.url));
 const clientBuildPath = join(executionPath, '../build');
 
 // Load server-side environment settings from the `.env` files.
-config({ path: join(executionPath, '.env') });
-config({ path: join(executionPath, `.env.${env}`), override: true });
-config({ path: join(executionPath, '.env.local'), override: true });
-config({ path: join(executionPath, `.env.${env}.local`), override: true });
+// config({ path: join(executionPath, '.env') });
+// config({ path: join(executionPath, `.env.${env}`), override: true });
+// config({ path: join(executionPath, '.env.local'), override: true });
+// config({ path: join(executionPath, `.env.${env}.local`), override: true });
 
 const { APP_API_TARGET_SERVER: targetServerUrl, PORT: port = 3000, APP_BASE_URL, NR_APP_ID } = process.env;
 
 const allowedOrigins = new Set([APP_BASE_URL]);
-if (env === 'development') {
-  allowedOrigins.add('http://localhost:3000');
-  allowedOrigins.add('http://localhost:8980');
-}
+
+// if (env === 'development') {
+//   allowedOrigins.add('http://localhost:3000');
+//   allowedOrigins.add('http://localhost:8980');
+// }
 
 const newRelic = NR_APP_ID ? { applicationId: NR_APP_ID } : undefined;
 
@@ -30,7 +31,7 @@ const { server } = buildServer({
   clientBuildPath,
   cspOptions: {
     services: ['google-fonts', 'google-analytics', 'newrelic'],
-    connectSrcElements: ['https://*.licence.nsw.gov.au', 'https://*.au.auth0.com'],
+    connectSrcElements: ['https://*.auth0.com'],
     styleSrcElements: ["'unsafe-inline'"],
   },
   newRelic,

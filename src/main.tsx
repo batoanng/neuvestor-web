@@ -1,4 +1,4 @@
-import { Root } from '@ssrc/routes/Root';
+import { Root } from '@/routes/Root';
 import { StrictMode } from 'react';
 import * as ReactDOM from 'react-dom/client';
 import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } from 'react-router-dom';

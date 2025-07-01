@@ -25,7 +25,7 @@ yarn-error.log*
 /kubernetes
 /out
 
-/.env*
+/.env
 /config.*
 
 /.vscode
