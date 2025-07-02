@@ -5,8 +5,8 @@
   "private": true,
   "type": "commonjs",
   "dependencies": {
-    "@batoanng/components": "^2.0.1",
-    "@batoanng/frontend-server": "^2.0.3",
+    "@batoanng/components": "2.0.4",
+    "@batoanng/frontend-server": "2.0.3",
     "@emotion/react": "11.13.5",
     "@emotion/styled": "11.13.5",
     "@mui/icons-material": "6.1.8",

@@ -1,4 +1,4 @@
-import { ErrorBoundary } from '@dcs-partner-portal/components';
+import { ErrorBoundary } from '@batoanng/components';
 import { Route, Routes } from 'react-router-dom';
 
 import { Providers } from '@/core/Providers';
