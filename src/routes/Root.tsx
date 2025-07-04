@@ -1,4 +1,4 @@
-import { ErrorBoundary } from '@batoanng/components';
+import { ErrorBoundary } from '@batoanng/mui-components';
 import { Route, Routes } from 'react-router-dom';
 
 import { Providers } from '@/core/Providers';
