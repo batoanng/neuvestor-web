@@ -1,1 +1,2 @@
-# real-investor
+# Neuvestor
+Neural investor

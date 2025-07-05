@@ -18,5 +18,5 @@ frontend.
 
 The docker image is housed in the root of the mono repo with the following command you can run the image
 
-- build: ` docker build -f Dockerfile.real-investor-web . `
-- run: `docker run -p 3000:3000 real-investor-web`
+- build: ` docker build -f Dockerfile.neuvestor-web . `
+- run: `docker run -p 3000:3000 neuvestor-web`

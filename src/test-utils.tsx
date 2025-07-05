@@ -1,11 +1,10 @@
 import { ReactElement } from 'react';
 import { render, RenderOptions } from '@testing-library/react';
-import { createTheme, ThemeProvider } from '@mui/material';
-
-const theme = createTheme({});
+import { ThemeProvider } from '@mui/material';
+import { defaultTheme } from '@batoanng/mui-components';
 
 const AllTheProviders = ({ children }: { children: React.ReactNode }) => {
-  return <ThemeProvider theme={theme}>{children}</ThemeProvider>;
+  return <ThemeProvider theme={defaultTheme}>{children}</ThemeProvider>;
 };
 
 const customRender = (ui: ReactElement, options?: Omit<RenderOptions, 'wrapper'>) =>
