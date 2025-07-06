@@ -1,9 +1,9 @@
-interface RuntimeConfig {
+export interface RuntimeConfig {
   environmentName?: string;
   routerBaseName: string;
 
   /** The runtime URL for the app. All app paths should be relative to this. */
-  appUrl: string;
+  appUrl: string; 
 
   api: {
     url: string;
