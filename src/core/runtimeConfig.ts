@@ -23,24 +23,24 @@ export interface RuntimeConfig {
 }
 
 export const runtimeConfig: RuntimeConfig = {
-  environmentName: window.process.env.VITE_ENVIRONMENT_NAME ?? '',
-  routerBaseName: window.process.env.VITE_ROUTER_BASE_NAME ?? '',
+  environmentName: import.meta.env.VITE_ENVIRONMENT_NAME ?? '',
+  routerBaseName: import.meta.env.VITE_ROUTER_BASE_NAME ?? '',
 
-  appUrl: window.process.env.VITE_APP_URL ?? window.location.href,
+  appUrl: import.meta.env.VITE_APP_URL ?? window.location.href,
 
   api: {
-    url: window.process.env.VITE_API_URL || '',
+    url: import.meta.env.VITE_API_URL || '',
   },
 
   analytics: {
-    googleKey: window.process.env.VITE_GA_KEY ?? '',
+    googleKey: import.meta.env.VITE_GA_KEY ?? '',
   },
 
   isDevelopment: import.meta.env.DEV,
 
   oidc: {
-    authority: window.process.env.VITE_OIDC_AUTHORITY || '',
-    clientId: window.process.env.VITE_OIDC_CLIENT_ID || '',
+    authority: import.meta.env.VITE_OIDC_AUTHORITY || '',
+    clientId: import.meta.env.VITE_OIDC_CLIENT_ID || '',
   },
 };
 

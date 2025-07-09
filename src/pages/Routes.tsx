@@ -1,6 +1,7 @@
 import { Navigate, Route, Routes } from 'react-router-dom';
 import { HomePage } from '@/pages/home/HomePage';
-import { setupGoogleAnalytics, Providers, runtimeConfig } from '@/core';
+import { setupGoogleAnalytics, Providers } from '@/core';
+import { runtimeConfig } from '@/core/runtimeConfig';
 
 setupGoogleAnalytics(runtimeConfig.analytics.googleKey);
 

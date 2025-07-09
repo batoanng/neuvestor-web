@@ -1,5 +1,4 @@
-import { runtimeConfig } from '@/core';
-
+import { runtimeConfig } from '@/core/runtimeConfig';
 import axios, { AxiosError, AxiosInstance, InternalAxiosRequestConfig } from 'axios';
 import * as AxiosLogger from 'axios-logger';
 

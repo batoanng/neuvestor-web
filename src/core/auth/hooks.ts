@@ -1,6 +1,7 @@
 import { apiClient } from '@/api';
 import { UserPrivileges, defaultPrivileges, useAuthorisationContext } from '@/core/oidc';
-import { QueryOptions, useQuery } from '@tanstack/react-query';
+import { useQuery, type UseQueryResult, type QueryOptions } from '@tanstack/react-query';
+
 import { AppUser } from './types';
 
 export const QueryCacheKeys = {
@@ -40,7 +41,7 @@ export const useUserPrivilegesQuery = (options: QueryOptions<UserPrivileges> = {
 
 export const useSignedInUserQuery = <TUser = AppUser>(
   options: QueryOptions<TUser | null, Error, TUser | null> = {}
-) => {
+): UseQueryResult<TUser | null, Error> => {
   const { token } = useAuthorisationContext();
 
   return useQuery({
@@ -56,7 +57,6 @@ export const useSignedInUserQuery = <TUser = AppUser>(
         validateStatus: (status) => status !== 401 && status !== 403,
       });
 
-      // If we get anything other than a 20x status then we don't have the user's profile - they need to profile connect.
       return data && status < 300 ? data : null;
     },
     ...options,

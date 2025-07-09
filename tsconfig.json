@@ -11,7 +11,7 @@
     "isolatedModules": true,
     "jsx": "react-jsx",
     "moduleResolution": "Node",
-    "outDir": "dist",
+    "outDir": "build",
     "noEmit": false,
     "noFallthroughCasesInSwitch": true,
     "resolveJsonModule": true,
@@ -28,6 +28,6 @@
   "mdx": {
     "plugins": [["remark-frontmatter", ["toml", "yaml"]], "remark-gfm"]
   },
-  "include": ["tooling", "src", "vite.config.ts"],
+  "include": ["src", "vite.config.ts"],
   "exclude": ["node_modules", "dist"]
 }

@@ -1,6 +1,6 @@
 import type { PropsWithChildren } from 'react';
 import urlJoin from 'url-join';
-import { runtimeConfig } from '@/core';
+import { runtimeConfig } from '@/core/runtimeConfig';
 import { useSendPasswordResetEmailMutation } from '@/hooks';
 import { IdleTimer } from '@/components';
 import { UserManagerSettings } from 'oidc-client-ts';
