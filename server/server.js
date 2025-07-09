@@ -1,11 +1,14 @@
 import { buildServer } from '@batoanng/frontend-server';
 import { dirname, join } from 'path';
 import { fileURLToPath } from 'url';
+import { config } from 'dotenv';
 
 // load env
 const env = process.env.NODE_ENV?.toLowerCase() ?? 'development';
 const executionPath = dirname(fileURLToPath(import.meta.url));
 const clientBuildPath = join(executionPath, '../build');
+
+config({ path: join(executionPath, '.env') });
 
 const { APP_API_TARGET_SERVER: targetServerUrl, PORT: port = 3000, APP_BASE_URL, NR_APP_ID } = process.env;
 

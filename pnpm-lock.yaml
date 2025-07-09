@@ -13,8 +13,8 @@ importers:
   .:
     dependencies:
       '@batoanng/frontend-server':
-        specifier: 2.2.0
-        version: 2.2.0(cors@2.8.5)(dotenv@16.6.1)(express@4.21.2)(http-proxy-middleware@2.0.9)(mime-types@2.1.35)
+        specifier: 2.2.1
+        version: 2.2.1(cors@2.8.5)(dotenv@16.6.1)(express@4.21.2)(http-proxy-middleware@2.0.9)(mime-types@2.1.35)
       '@batoanng/mui-components':
         specifier: 3.0.6
         version: 3.0.6(5c9eb0cfa49eec00a798702259fa46b6)
@@ -900,8 +900,8 @@ packages:
   '@batoanng/eslint-config@1.0.0':
     resolution: {integrity: sha512-s80zGw99aptWBDMuC53E6Vh3oMgAvIYnumaYnqi9Rr27ASG75ElpHVRammmfQP3KfIjLl/JvVsxmWRv5GQUsfA==}
 
-  '@batoanng/frontend-server@2.2.0':
-    resolution: {integrity: sha512-3sIT5Sq5/Bs/QkpZheYolJuUSw9qJZPHbVeIpyCZDltQ5u/5wD05O2WkFrxjsMBdXbQUPSTgEm+CuIBAWhN6MA==}
+  '@batoanng/frontend-server@2.2.1':
+    resolution: {integrity: sha512-Wgj2FTI2GQq7SkMlFUFHRA3Yu1Ub8FzO6o3SYvYaXtOhUbj6Kg0E4Vm9FA/pQG/CkX5156ZabqHdcgY/6bN2vQ==}
     engines: {node: '20', pnpm: '10'}
     peerDependencies:
       cors: ^2.8.5
@@ -6960,7 +6960,7 @@ snapshots:
       - tailwindcss
       - typescript
 
-  '@batoanng/frontend-server@2.2.0(cors@2.8.5)(dotenv@16.6.1)(express@4.21.2)(http-proxy-middleware@2.0.9)(mime-types@2.1.35)':
+  '@batoanng/frontend-server@2.2.1(cors@2.8.5)(dotenv@16.6.1)(express@4.21.2)(http-proxy-middleware@2.0.9)(mime-types@2.1.35)':
     dependencies:
       cors: 2.8.5
       dotenv: 16.6.1
