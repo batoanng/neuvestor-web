@@ -1,7 +1,6 @@
 import { createContext, useContext } from 'react';
 import { AuthorisationContextType, OidcSchemeData } from './types';
 import { useAsync, useLatest } from 'react-use';
-import { QueryOptions } from '@tanstack/react-query';
 
 export const AuthorisationContext = createContext<AuthorisationContextType | null>(null);
 

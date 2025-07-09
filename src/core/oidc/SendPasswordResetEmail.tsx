@@ -1,4 +1,4 @@
-import { Stack, Typography, styled } from '@mui/material';
+import { Stack, Typography } from '@mui/material';
 import { Button } from '@batoanng/mui-components';
 import { CenterErrorModal, CenterPage } from './CenterModal';
 
