@@ -16,6 +16,7 @@ const allowedOrigins = new Set([APP_BASE_URL]);
 
 if (env === 'development') {
   allowedOrigins.add('http://localhost:3000');
+  allowedOrigins.add('http://localhost:8008');
 }
 
 const newRelic = NR_APP_ID ? { applicationId: NR_APP_ID } : undefined;
