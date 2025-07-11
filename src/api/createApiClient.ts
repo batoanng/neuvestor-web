@@ -1,8 +1,7 @@
 import { runtimeConfig } from '@/core/runtimeConfig';
 import axios, { AxiosError, AxiosInstance, InternalAxiosRequestConfig } from 'axios';
 import * as AxiosLogger from 'axios-logger';
-
-export type UnauthorizedRequestHandler = (client: AxiosInstance, error: AxiosError) => Promise<unknown>;
+import { setBearerToken, UnauthorizedRequestHandler, setUnauthorizedRequestHandler, ApiClient } from '@batoanng/oidc';
 
 interface CreateClientConfig extends ApiClientConfig {
   baseUrl: string;
@@ -14,8 +13,6 @@ interface ApiClientConfig {
   accessToken?: string | string[] | null;
   onUnauthorizedRequest?: UnauthorizedRequestHandler;
 }
-
-type ApiClient = AxiosInstance & ApiClientConfig;
 
 class PayloadError extends Error {
   public readonly status?: number;
@@ -110,18 +107,6 @@ const createApiClient = ({ baseUrl, enableLogging, ...config }: CreateClientConf
   );
 
   return client;
-};
-
-export const setBearerToken = (axiosClient: AxiosInstance, token?: string | string[] | null) => {
-  (axiosClient as ApiClient).accessToken = token;
-};
-
-export const setTenantId = (axiosClient: AxiosInstance, tenantId?: string | null): void => {
-  (axiosClient as ApiClient).tenantId = tenantId;
-};
-
-export const setUnauthorizedRequestHandler = (axiosClient: AxiosInstance, handler?: UnauthorizedRequestHandler) => {
-  (axiosClient as ApiClient).onUnauthorizedRequest = handler;
 };
 
 export const apiClient = createApiClient({

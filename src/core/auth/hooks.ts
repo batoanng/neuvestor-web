@@ -1,5 +1,5 @@
 import { apiClient } from '@/api';
-import { UserPrivileges, defaultPrivileges, useAuthorisationContext } from '@/core/oidc';
+import { UserPrivileges, defaultPrivileges, useAuthorisationContext } from '@batoanng/oidc';
 import { useQuery, type UseQueryResult, type QueryOptions } from '@tanstack/react-query';
 
 import { AppUser } from './types';

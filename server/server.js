@@ -15,7 +15,6 @@ const { APP_API_TARGET_SERVER: targetServerUrl, PORT: port = 3000, APP_BASE_URL,
 const allowedOrigins = new Set([APP_BASE_URL]);
 
 if (env === 'development') {
-  allowedOrigins.add('http://localhost:3000');
   allowedOrigins.add('http://localhost:8008');
 }
 

@@ -4,7 +4,7 @@ import { runtimeConfig } from '@/core/runtimeConfig';
 import { useSendPasswordResetEmailMutation } from '@/hooks';
 import { IdleTimer } from '@/components';
 import { UserManagerSettings } from 'oidc-client-ts';
-import { OidcAuthorisationProvider } from '../oidc/OidcAuthorisationProvider';
+import { OidcAuthorisationProvider } from '@batoanng/oidc';
 import { AuthorisationCallback } from './AuthorisationCallback';
 
 const redirectUri = urlJoin(runtimeConfig.appUrl, '/oidc/callback');

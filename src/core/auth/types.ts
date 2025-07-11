@@ -1,8 +1,3 @@
-export interface ChallengeResult {
-  allow: boolean;
-  reason?: string;
-}
-
 export type UserRoles = 'Guest' | 'Administrator';
 
 export interface AppUser {

@@ -1,8 +1,7 @@
-import { OidcAuthorisationCallback, useEnsureOidcLoginToken } from '@/core/oidc';
 import { apiClient } from '@/api';
 import { useSignedInUserQuery, useUserPrivilegesQuery } from './hooks';
 import { type PropsWithChildren, useMemo } from 'react';
-import { UserInformation } from '@/core/oidc';
+import { OidcAuthorisationCallback, useEnsureOidcLoginToken, UserInformation } from '@batoanng/oidc';
 
 export const AuthorisationCallback = ({ children }: PropsWithChildren) => {
   useEnsureOidcLoginToken();
