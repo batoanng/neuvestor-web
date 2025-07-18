@@ -18,8 +18,8 @@
   },
   "dependencies": {
     "@batoanng/frontend-server": "2.2.1",
-    "@batoanng/oidc": "0.0.4",
     "@batoanng/mui-components": "3.0.6",
+    "@batoanng/oidc": "0.0.4",
     "@batoanng/utils": "2.1.3",
     "@emotion/react": "11.13.5",
     "@emotion/styled": "11.13.5",

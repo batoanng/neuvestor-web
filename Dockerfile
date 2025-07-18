@@ -1,15 +1,10 @@
-# Common Dockerfile for all schemes.
 FROM node:20-alpine as client
 
-ARG PNPM_VERSION=9.0.6
-ARG CONFIG_FOLDER_NAME
-ARG PUBLIC_URL
+ARG PACKAGE_NAME=neuvestor
+ARG PNPM_VERSION=10
 
-RUN echo "CONFIG_FOLDER_NAME: ${CONFIG_FOLDER_NAME}"
-RUN echo "PUBLIC_URL: ${PUBLIC_URL}"
-
-WORKDIR /usr/src/app
-COPY --chown=node:node package.json pnpm-lock.yaml .npmrc ./
+WORKDIR /usr/app
+COPY --chown=node:node ./ ./
 
 # Install package manager
 RUN --mount=type=cache,id=pnpm-store,target=/root/.pnpm-store \
@@ -20,42 +15,33 @@ RUN --mount=type=cache,id=pnpm-store,target=/root/.pnpm-store \
     pnpm install --frozen-lockfile \
     | grep -v "cross-device link not permitted\|Falling back to copying packages from store"
 
-COPY --chown=node:node . ./
+# Build the services
+RUN pnpm run build:all:packages
 
-# PROJECT is required for config-overrides.js to retrieve the correct .env files to create corresponding config files for.
-ENV PROJECT ${CONFIG_FOLDER_NAME}
-# PUBLIC_URL is used by webpack to prefix built resource URLs. We could use the homepage setting in package.json,
-# but then we'd need a different package.json per scheme.
-ENV PUBLIC_URL /${PUBLIC_URL}
-RUN pnpm build
+# Build the frontend
+RUN pnpm --filter ${PACKAGE_NAME} run build
 
+# Create a new image with just the built files and then run server.js
 FROM node:20-alpine
 
-ARG PNPM_VERSION=9.0.6
-ARG CONFIG_FOLDER_NAME
+ARG BUILD_PATH=build
 
 WORKDIR /usr/app/
 
-COPY --from=client --chown=node:node /usr/src/app/build/ ./build/
+# Copy over the build files into the server image
+COPY --from=client /usr/app/${BUILD_PATH}/ ./${BUILD_PATH}/
 
 WORKDIR /usr/app/server/
 
-# Setting PROJECT here for the copy below it
-ENV PROJECT ${CONFIG_FOLDER_NAME}
-COPY --chown=node:node .npmrc server/ ./
-COPY --chown=node:node config/$CONFIG_FOLDER_NAME/server/.env* ./
+# Copy over the server files
+COPY --chown=node:node server/ ./
+COPY --chown=node:node .npmrc ./
 
-# Install package manager
-RUN --mount=type=cache,id=pnpm-store,target=/root/.pnpm-store \
-    npm i --global --no-update-notifier --no-fund pnpm@${PNPM_VERSION}
-
-# Install dependencies
-RUN --mount=type=cache,id=pnpm-store,target=/root/.pnpm-store \
-    pnpm install --frozen-lockfile --force \
-    | grep -v "cross-device link not permitted\|Falling back to copying packages from store"
+RUN npm i
 
 ENV PORT 3000
 EXPOSE 3000
 
+# Run the server as the node user
 USER node
-CMD ["pnpm", "start"]
+CMD ["npm", "start"]
