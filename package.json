@@ -14,7 +14,7 @@
     "test:ui": "vitest --ui",
     "preview": "vite preview",
     "server": "cd server && npm run start",
-    "dev:concurrently": "concurrently -c red,blue --names api,web \"pnpm run server\" \"pnpm run dev\""
+    "dev:concurrently": "concurrently -c green,blue --names api,web \"pnpm run server\" \"pnpm run dev\""
   },
   "dependencies": {
     "@batoanng/frontend-server": "2.2.1",
