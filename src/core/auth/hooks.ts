@@ -10,7 +10,7 @@ export const QueryCacheKeys = {
 };
 
 const fetchUserPrivileges = async (token: string): Promise<UserPrivileges> => {
-  const { data } = await apiClient.get<UserPrivileges>('v1/signedInUser/privileges', {
+  const { data } = await apiClient.get<UserPrivileges>('v1/users/signedInUser/privileges', {
     headers: {
       Authorization: `Bearer ${token}`,
     },
@@ -21,7 +21,6 @@ const fetchUserPrivileges = async (token: string): Promise<UserPrivileges> => {
 
 export const useUserPrivilegesQuery = (options: QueryOptions<UserPrivileges> = {}) => {
   const { token } = useAuthorisationContext();
-
   return useQuery({
     queryKey: [QueryCacheKeys.privileges],
 
@@ -49,7 +48,7 @@ export const useSignedInUserQuery = <TUser = AppUser>(
 
     queryFn: async () => {
       const { status, data } = await apiClient.request<TUser>({
-        url: 'v1/signedInUser',
+        url: 'v1/users/signedInUser',
         method: 'get',
         headers: {
           Authorization: `Bearer ${token}`,

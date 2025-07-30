@@ -20,7 +20,7 @@ const userManagerSettings: UserManagerSettings = {
     // The audience has to match the audience for the API so that Auth0 generates a proper JWT for
     // the access token, instead of an opaque token.
     // See: https://community.auth0.com/t/why-access-token-is-not-a-jwt-opaque-token/31028
-    // audience: 'https://localhost:7002/',
+    audience: 'https://neuvestor/',
   },
 };
 
