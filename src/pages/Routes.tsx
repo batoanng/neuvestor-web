@@ -1,5 +1,5 @@
 import { Navigate, Route, Routes } from 'react-router-dom';
-import { HomePage } from '@/pages/home/HomePage';
+import { HomePage } from '@/pages/home';
 import { setupGoogleAnalytics, Providers } from '@/core';
 import { runtimeConfig } from '@/core/runtimeConfig';
 
