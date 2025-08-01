@@ -3,16 +3,18 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import { PropsWithChildren } from 'react';
 import { AuthorisationProvider } from '@/core/auth';
-import { defaultTheme } from '@batoanng/mui-components';
+import { createDefaultTheme } from '@batoanng/mui-components';
 import { createQueryClient } from '@/utils';
 import { SnackbarProviderWrapper } from '@/components';
 
 export const queryClient: QueryClient = createQueryClient();
 
 export const Providers = ({ children }: PropsWithChildren) => {
+  const theme = createDefaultTheme(true);
+
   return (
     <QueryClientProvider client={queryClient}>
-      <ThemeProvider theme={defaultTheme}>
+      <ThemeProvider theme={theme}>
         <CssBaseline />
         <AuthorisationProvider>
           <SnackbarProviderWrapper>{children}</SnackbarProviderWrapper>
