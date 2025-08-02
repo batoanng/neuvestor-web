@@ -4,7 +4,7 @@ import { HomeDrawer } from './HomeDrawer';
 
 export const HomeLayout = ({ children }: PropsWithChildren) => {
   return (
-    <Box display="flex">
+    <Box width="100vw" height="100vh" display="flex">
       <HomeDrawer />
       {children}
     </Box>

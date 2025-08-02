@@ -16,11 +16,11 @@ importers:
         specifier: 2.2.1
         version: 2.2.1(cors@2.8.5)(dotenv@16.6.1)(express@4.21.2)(http-proxy-middleware@2.0.9)(mime-types@2.1.35)
       '@batoanng/mui-components':
-        specifier: 3.0.6
-        version: 3.0.6(5c9eb0cfa49eec00a798702259fa46b6)
+        specifier: 3.0.13
+        version: 3.0.13(5c9eb0cfa49eec00a798702259fa46b6)
       '@batoanng/oidc':
-        specifier: 0.0.4
-        version: 0.0.4(a7e15f71dfe058fe63c5c7553c453e0e)
+        specifier: 0.0.10
+        version: 0.0.10(fb7865ccc2a3e11289450730bdd75776)
       '@batoanng/utils':
         specifier: 2.1.3
         version: 2.1.3
@@ -919,8 +919,8 @@ packages:
   '@batoanng/jest-config@1.1.1':
     resolution: {integrity: sha512-6Z5ZaIhi8CxQam7By7JersMD3wZyhbE3YxNxtqC4TTJTI3DchT7CjERtbpqAA9y3zXfljKO0PCmf/lMJ5evAjw==}
 
-  '@batoanng/mui-components@3.0.6':
-    resolution: {integrity: sha512-naeWQ/GV/a6Xqfg213C2RuPgRqwVrOWtbraz1sFRugLu5uMixvgWvOSg8uG1AZAQqlONxLHaPEA8QHgzASco+A==}
+  '@batoanng/mui-components@3.0.13':
+    resolution: {integrity: sha512-lvvAJseXsPGmk4gBqo5roayYGQbYoGPQjdVuCxrkaoSqWIaCWP0WyirD5/7rQ5Lqsv7dDRY8ZpgJyOMW0YY1sg==}
     engines: {node: '20', pnpm: '10'}
     peerDependencies:
       '@emotion/react': ^11.13.5
@@ -942,11 +942,11 @@ packages:
       react-idle-timer:
         optional: true
 
-  '@batoanng/oidc@0.0.4':
-    resolution: {integrity: sha512-TMNEa6DUuhlyLLKQjAfKfiXu+5b4IRS0cZBoTnXxkWX/dKaXYs8LDHQ7/zNlaaXRbhpoLxY/OmSjnMXQNnH64g==}
+  '@batoanng/oidc@0.0.10':
+    resolution: {integrity: sha512-j1shvJHFgh8QmyAnBPiPBl3CKBkYGjSz46hUKY7hn7yxfJeP6HnBc89TpxLxu3F6wMcIGpRWRWqoyuxZaF8RTw==}
     engines: {node: '20', pnpm: '10'}
     peerDependencies:
-      '@batoanng/mui-components': 3.0.7
+      '@batoanng/mui-components': 3.0.13
       '@emotion/react': ^11.13.5
       '@emotion/styled': ^11.13.5
       '@mui/icons-material': 6.1.8
@@ -981,6 +981,9 @@ packages:
 
   '@batoanng/utils@2.1.3':
     resolution: {integrity: sha512-pGlSC82bQdYCaeCr+k03y+F5/5ZjpkfCXlCFUuThR1+pkP+Ea6L2DMzH25XPLk/RjBvZ2Iy8uw13u8aoMR/ciQ==}
+
+  '@batoanng/utils@2.1.5':
+    resolution: {integrity: sha512-0whdELxoVWoVyacuoxQLVYO9Hy5+CFBvDiIyHC9Ge85vbrm4bcZB0ijbJ3z/Km7bF3zmloMOjinbZybZmthIBA==}
 
   '@bcoe/v8-coverage@0.2.3':
     resolution: {integrity: sha512-0hYQ8SB4Db5zvZB4axdMHGwEaQjkZzFjQiN9LVYvIFB2nSUHW9tYpxWriPrWDASIxiaXax83REcLxuSdnGPZtw==}
@@ -7005,9 +7008,9 @@ snapshots:
 
   '@batoanng/jest-config@1.1.1': {}
 
-  '@batoanng/mui-components@3.0.6(5c9eb0cfa49eec00a798702259fa46b6)':
+  '@batoanng/mui-components@3.0.13(5c9eb0cfa49eec00a798702259fa46b6)':
     dependencies:
-      '@batoanng/utils': 2.1.3
+      '@batoanng/utils': 2.1.5
       '@emotion/react': 11.13.5(@types/react@18.3.23)(react@18.3.1)
       '@emotion/styled': 11.13.5(@emotion/react@11.13.5(@types/react@18.3.23)(react@18.3.1))(@types/react@18.3.23)(react@18.3.1)
       '@mui/icons-material': 6.1.8(@mui/material@6.1.8(@emotion/react@11.13.5(@types/react@18.3.23)(react@18.3.1))(@emotion/styled@11.13.5(@emotion/react@11.13.5(@types/react@18.3.23)(react@18.3.1))(@types/react@18.3.23)(react@18.3.1))(@types/react@18.3.23)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(@types/react@18.3.23)(react@18.3.1)
@@ -7026,9 +7029,9 @@ snapshots:
       react-dropzone: 14.3.8(react@18.3.1)
       react-idle-timer: 5.7.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
 
-  '@batoanng/oidc@0.0.4(a7e15f71dfe058fe63c5c7553c453e0e)':
+  '@batoanng/oidc@0.0.10(fb7865ccc2a3e11289450730bdd75776)':
     dependencies:
-      '@batoanng/mui-components': 3.0.6(5c9eb0cfa49eec00a798702259fa46b6)
+      '@batoanng/mui-components': 3.0.13(5c9eb0cfa49eec00a798702259fa46b6)
       '@emotion/react': 11.13.5(@types/react@18.3.23)(react@18.3.1)
       '@emotion/styled': 11.13.5(@emotion/react@11.13.5(@types/react@18.3.23)(react@18.3.1))(@types/react@18.3.23)(react@18.3.1)
       '@mui/icons-material': 6.1.8(@mui/material@6.1.8(@emotion/react@11.13.5(@types/react@18.3.23)(react@18.3.1))(@emotion/styled@11.13.5(@emotion/react@11.13.5(@types/react@18.3.23)(react@18.3.1))(@types/react@18.3.23)(react@18.3.1))(@types/react@18.3.23)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(@types/react@18.3.23)(react@18.3.1)
@@ -7058,6 +7061,8 @@ snapshots:
       - debug
 
   '@batoanng/utils@2.1.3': {}
+
+  '@batoanng/utils@2.1.5': {}
 
   '@bcoe/v8-coverage@0.2.3': {}
 

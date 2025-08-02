@@ -11,8 +11,8 @@ import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MailIcon from '@mui/icons-material/Mail';
-import { HOME_DRAWER_WIDTH } from './constant';
-import { useHomeContext } from './HomeContext';
+import { HOME_DRAWER_WIDTH } from '../constant';
+import { useHomeContext } from '../HomeContext';
 
 const openedMixin = (theme: Theme): CSSObject => ({
   width: `${HOME_DRAWER_WIDTH}px!important`,
@@ -106,6 +106,7 @@ export const HomeDrawer = () => {
                   {
                     minWidth: 0,
                     justifyContent: 'center',
+                    color: '#7e7e7e',
                   },
                   context.openDrawer
                     ? {
